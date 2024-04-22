@@ -15,6 +15,9 @@ Min_or_Max = int(input("For minterms (will be represented by SOP) press 1. For m
 user_minterms = [int(num) for num in input("Enter the list of minterms separated by spaces: ").split()]
 user_dontcares = [int(num) for num in input("Enter the list of don't cares separated by spaces: ").split()]
 
+user_minterms = [257, 1025, 1281, 1537, 2305, 2817, 3585, 3841, 4353, 4865, 5377, 5889, 7937]
+user_dontcares = [1, 769, 2049, 2561, 4097, 5633, 6657, 7169, 7425, 7681]
+
 #Check for any common terms between minterm and don't care
 
 if set(user_minterms).intersection(set(user_dontcares)):
