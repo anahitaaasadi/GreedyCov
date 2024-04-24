@@ -321,6 +321,18 @@ print(f"Final EPI list:")
 print(Final_EPI)
 draw_chart(pi_table)
 
+def cost(lst):
+    total_count = 0
+    for string in lst:
+        total_count += string.count('0') + string.count('1')
+    return total_count
+
+# Count zeros and ones
+total_count = cost(Final_EPI)
+
+# Output the result
+print("Total cost:", total_count)
+
 for index_j, j in enumerate(Final_EPI):
     if Min_or_Max == 1:
         result = ''
