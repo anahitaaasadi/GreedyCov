@@ -1,3 +1,5 @@
+import time
+
 # A custom function for binary representation with specific length, so that it'll be easilly called and reused throughout the code:
 def decimal_to_binary_fixed_width(decimal, width):
     # Convert decimal to binary using bin() and remove the '0b' prefix (cell 0 and 1 of the array)
@@ -15,6 +17,7 @@ Min_or_Max = int(input("For minterms (will be represented by SOP) press 1. For m
 user_minterms = [int(num) for num in input("Enter the list of minterms separated by spaces: ").split()]
 user_dontcares = [int(num) for num in input("Enter the list of don't cares separated by spaces: ").split()]
 
+start_time = time.perf_counter()
 #Check for any common terms between minterm and don't care
 
 if set(user_minterms).intersection(set(user_dontcares)):
@@ -375,3 +378,7 @@ def cost(lst):
 # Count literals (total cost)
 total_count = cost(Final_EPI)
 print("Total cost:", total_count)
+
+end_time = time.perf_counter()
+execution_time = end_time - start_time
+print("Execution time:", execution_time, "seconds")
